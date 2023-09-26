@@ -1,20 +1,27 @@
 import './App.css';
 import React from 'react';
-import {Input} from 'antd';
-import { UserOutlined } from '@ant-design/icons';
+import {Select} from 'antd';
+
 
 
 function App() {
+  const fruits = ['Apple', 'Orange', 'Banana', 'Pear'];
 
   return (
     <div className="App">
       <header className="App-header">
-        <Input.Search
-        placeholder="Name"
-        maxLength={10}
-        prefix={<UserOutlined />}
-        allowClear
-        ></Input.Search>
+      <p> Which is your favorite fruit?</p>
+      <Select mode='multiple' placeholder='Select Fruit' style={{width:'20%'}}>
+        maxTagCount={2}
+        {fruits.map(fruit => (
+          <Select.Option key={fruit} value={fruit}>
+            {fruit}
+          </Select.Option>
+        ))}
+
+      </Select>
+
+
       </header>
     </div>
   );
