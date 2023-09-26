@@ -1,40 +1,20 @@
-import {  Button, Space, DatePicker } from 'antd';
 import './App.css';
 import React from 'react';
-import { PoweroffOutlined } from '@ant-design/icons';
+import {Input} from 'antd';
+import { UserOutlined } from '@ant-design/icons';
+
 
 function App() {
 
-  const [loading, setLoading] = React.useState(false);
-  const onButtonClick = (e) => {
-    alert('click');
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-  }
   return (
-    <div className="App" style={{ padding: '0 24px' }}>
+    <div className="App">
       <header className="App-header">
-      
-      <Button 
-      type="primary" 
-      
-      loading={loading}
-      icon={<PoweroffOutlined />}
-      className='my-button'
-      
-      onClick={onButtonClick}
-      >My First Button</Button>
-      <Space>
-        <DatePicker />
-        <DatePicker picker="week" />
-        <DatePicker picker="month" />
-        <DatePicker picker="quarter" />
-        <DatePicker picker="year" />
-        
-      </Space>
-
+        <Input.Search
+        placeholder="Name"
+        maxLength={10}
+        prefix={<UserOutlined />}
+        allowClear
+        ></Input.Search>
       </header>
     </div>
   );
