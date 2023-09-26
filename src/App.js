@@ -11,10 +11,14 @@ function App() {
     <div className="App">
       <header className="App-header">
       <p> Which is your favorite fruit?</p>
-      <Select mode='multiple' placeholder='Select Fruit' style={{width:'20%'}}>
-        maxTagCount={2}
-        {fruits.map(fruit => (
-          <Select.Option key={fruit} value={fruit}>
+      <Select 
+      mode='multiple' 
+      maxTagCount={2}
+      placeholder='Select Fruit' 
+      style={{width:'20%'}}>
+        
+        {fruits.map((fruit, index) => (
+          <Select.Option key={index} value={fruit}>
             {fruit}
           </Select.Option>
         ))}
