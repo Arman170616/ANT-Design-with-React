@@ -1,31 +1,32 @@
 import './App.css';
 import React from 'react';
-import {Select} from 'antd';
+import {Form, Input, Button} from 'antd';
 
 
 
 function App() {
-  const fruits = ['Apple', 'Orange', 'Banana', 'Pear'];
+
+
+  const onFinish = (e) => {
+    console.log(e);
+  }
 
   return (
     <div className="App">
       <header className="App-header">
-      <p> Which is your favorite fruit?</p>
-      <Select 
-      mode='multiple' 
-      maxTagCount={2}
-      placeholder='Select Fruit' 
-      style={{width:'20%'}}>
-        
-        {fruits.map((fruit, index) => (
-          <Select.Option key={index} value={fruit}>
-            {fruit}
-          </Select.Option>
-        ))}
+        <Form onFinish={onFinish}>
+          <Form.Item label="User Name" name="username">
+            <Input placeholder="Enter Your Name" required />
+          </Form.Item>
 
-      </Select>
+          <Form.Item label="Password" name="password">
+            <Input.Password placeholder="Enter Your Password" required />
+          </Form.Item>
 
-
+          <Form.Item>
+            <Button block type="primary" htmlType="submit">Log In</Button>
+          </Form.Item>
+        </Form>
       </header>
     </div>
   );
