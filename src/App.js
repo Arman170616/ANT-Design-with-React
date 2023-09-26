@@ -22,7 +22,8 @@ function App() {
       block
       loading={loading}
       icon={<PoweroffOutlined />}
-      style={{backgroundColor: 'skyblue', color: 'white'}}
+      className='my-button'
+      
       onClick={onButtonClick}
       >My First Button</Button>
 
