@@ -1,7 +1,7 @@
 import {  Button } from 'antd';
 import './App.css';
 import React from 'react';
-// import { useState } from 'react';
+import { PoweroffOutlined } from '@ant-design/icons';
 
 function App() {
 
@@ -21,6 +21,8 @@ function App() {
       type="primary" 
       block
       loading={loading}
+      icon={<PoweroffOutlined />}
+      style={{backgroundColor: 'skyblue', color: 'white'}}
       onClick={onButtonClick}
       >My First Button</Button>
 
