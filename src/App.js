@@ -10,10 +10,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Spin spinning={loading}></Spin>
-        <Button type="primary" onClick={() => setLoading(!loading)}>Toggle loading</Button>
-        <Spin spinning={loading} tip="Loading...">
-          <div style={{ width: 200, height: 200, backgroundColor: '#ccc' }}></div>
+        <Spin spinning={loading}>
+          <Button type="primary" onClick={() => setLoading(!loading)}>
+            Toggle loading
+          </Button>
         </Spin>
 
       </header>
