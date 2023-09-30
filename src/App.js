@@ -1,20 +1,23 @@
 import './App.css';
 import React from 'react';
-import { Button, Spin } from 'antd';
+import { Progress } from 'antd';
 
 
 
 function App() {
-  const [loading, setLoading] = React.useState(false);
+
 
   return (
     <div className="App">
       <header className="App-header">
-        <Spin spinning={loading}>
-          <Button type="primary" onClick={() => setLoading(!loading)}>
-            Toggle loading
-          </Button>
-        </Spin>
+        <Progress percent={30} status='active' />
+        <Progress percent={33} type='circle' />
+        <Progress percent={33} type='line' strokeColor='red' status='active' />
+        <Progress percent={33} type='line' strokeColor='red' strokeWidth={50} status='active' steps={3} />
+
+
+
+
 
       </header>
     </div>
